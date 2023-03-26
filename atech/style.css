@@ -1,0 +1,1042 @@
+:root {
+    --bg-color: #fff;
+    --typewriterSpeed: 5s;
+    --typewriterCharacters: 24;
+    --colore1: rgb(0, 1, 118);
+    --colore2: #66a3c9;
+    --colore3: #f4f4f4;
+    --colore4: #ed5527;
+    --colore5: #e73c7e;
+    --colore6: #23a6d5;
+    --colore7: #23d5ab;
+  }
+  
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/*------------------NAVBAR------------------*/
+
+
+
+i{
+    font-size: 30px;
+    color: var(--colore1);
+}
+
+.content{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 10px;
+    gap: 1rem;
+}
+
+.content h3{
+    display: none;
+    color: var(--colore1);
+    font-size: 18px;
+}
+
+.content:hover #uno{
+    color: var(--colore4);
+}
+
+.content:hover #due{
+    color: var(--colore5);
+}
+
+.content:hover #tre{
+    color: var(--colore6);
+}
+
+.content:hover #quattro{
+    color: var(--colore7);
+}
+
+.content:hover h3{
+    display: block;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+    border: 3px solid var(--colore1);
+    width: 35rem;
+    margin: 0 auto;
+    border-radius: 1em 1em 4.5em 4.5em ;
+    padding: 30px;
+    padding-left: 90px;
+    padding-right: 90px;
+    background-color: var(--colore3);
+    top: 20px;
+}
+
+nav{
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    top: 30px;
+}
+
+.content h3::after{
+    content: "";
+    height: 2px;
+    width: 0%;
+    display: block;
+    transition: .8s ease;
+}
+
+.content #unouno::after{
+    background-color: var(--colore4);
+}
+
+.content #duedue::after{
+    background-color: var(--colore5);
+}
+
+.content #tretre::after{
+    background-color: var(--colore6);
+}
+
+.content #quattroquattro::after{
+    background-color: var(--colore7);
+}
+
+.content h3:hover::after{
+    width: 100%;
+}
+
+@media (max-width: 42.625em) {
+  
+    i{
+        font-size: 18px;
+    }
+    .content{
+        gap: 20px;
+    }
+    .content h3{
+        font-size: 14px;
+    }
+    header{
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1rem;
+        border: 2px solid var(--colore1);
+        width: 25rem;
+        height: 80px;
+        margin: 0 auto;
+        border-radius: 1em 1em 4.5em 4.5em ;
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: var(--colore3);
+        top: 20px;
+    
+    }
+}
+
+
+/*------------------FINE NAVBAR------------------*/
+
+
+/*------------------CURSORE CUSTOM------------------*/
+
+.outline {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    border: 2px solid var(--colore2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    mix-blend-mode: hard-light;  /*cambia colore sopra i testi*/  /*difference, hard-ligh*/
+    transform: translate(-64px, -64px);
+    transition: all 0.3s cubic-bezier(.215, .61, .355, .1);
+    pointer-events: none; /*disabilito eventi sugli elementi*/
+}
+
+.cursor{
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: var(--colore1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    transform: translate(-8px, -8px);
+    pointer-events: none;
+}
+
+.outline.hover{
+    background-color: var(--colore1);
+    border-color: var(--colore1);
+    width: 128px;
+    height: 128px;
+}
+
+
+
+
+
+/*------------------FINE CURSORE CUSTOM------------------*/
+
+
+
+/*-----------------------------------------MAIN-----------------------------------------*/
+
+
+
+
+
+
+/*------------------SECTION HOME------------------*/
+
+.titolo {
+    padding: 30px;
+    border-radius: 40px;
+    width: 800px;
+    height: 180px;
+    position: relative;
+    top: 20rem;
+    left: 10%;
+    z-index: 999999;
+}
+
+.titolo h1{
+    font-size: clamp(1rem, 3vw + 1rem, 4rem);
+    position: relative;
+    color: var(--colore1);
+    width: max-content;
+}
+
+.titolo h1::before,
+.titolo h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+.titolo h1::before {
+    background-color: #fff;  
+    animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards;
+  }
+  
+.titolo h1::after {
+    width: 0.125em;
+    background: var(--colore1);
+    animation: typewriter var(--typewriterSpeed)
+        steps(var(--typewriterCharacters)) 1s forwards,
+      blink 750ms steps(var(--typewriterCharacters)) infinite;
+  }
+  
+.titolo .span-atech{
+	background-size: 400% 400%;
+	animation: titolo-atech 15s ease infinite;
+    background: -webkit-linear-gradient(-45deg,  #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes titolo-atech {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.subtitle {
+    color: rgb(0, 1, 118);
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(2rem);
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+  }
+  
+  @keyframes typewriter {
+    to {
+      left: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    to {
+      background: transparent;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+/*-----------RESPONSIVE-----------*/
+
+@media (max-width: 42.625em){
+    .titolo {
+        position: relative;
+        top: 12rem;
+        left: 4%;
+    }
+}
+
+/*-----------FINE RESPONSIVE-----------*/
+
+
+
+
+
+/*---------FINE TITOLO ATECH CUSTOM---------*/
+
+
+
+
+
+
+
+/*-----------BOTTONE-----------*/
+
+
+.consulenza{
+    background: linear-gradient(-45deg,  #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    width: fit-content;
+    padding: 10px 5px;
+    position: relative;
+    top: 21rem;
+    left: 12%;
+    border-radius: 5px;
+    animation: consulenzaAnimation 20s;
+}
+
+@keyframes consulenzaAnimation {
+    0%{
+        background: transparent;
+    }
+    100%{
+        background: linear-gradient(-45deg,  #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    }
+}
+
+.button span{
+    color: var(--colore1);
+    font-weight: 800;
+    animation: spanAnimation 6s linear;
+    font-size: 15px;
+}
+
+@keyframes spanAnimation {
+    0%{
+        color: #fff;
+    }
+    100%{
+        color: var(--colore1);
+    }
+}
+
+.button{
+    padding: 5px;
+    width: fit-content;
+    background: #fff;
+}
+
+
+
+.consulenza:hover .button{
+    background: linear-gradient(-45deg,  #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+.consulenza:hover .button span {
+    color: #fff;
+}
+
+
+/*-----------RESPONSIVE-----------*/
+
+@media (max-width: 42.625em){
+    .consulenza{
+        position: relative;
+        top: 10rem;
+    }
+}
+
+/*-----------FINE RESPONSIVE-----------*/
+
+
+/*-----------FINE BOTTONE-----------*/
+
+
+
+
+
+/*-----------SEZIONI E ANIMAZIONI-----------*/
+
+
+.sezione{
+    width: 100%;
+    height: 100vh;
+}
+
+.sezione .title{
+    text-align: center;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+    opacity: 0;
+}
+
+.sezione.in-page .title{
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/*-----------FINE SEZIONI E ANIMAZIONI-----------*/
+
+
+
+.arrow{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-10%, -50%);
+}
+
+.arrow span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid var(--colore1);
+    border-right: 5px solid var(--colore1);
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: freccetta 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -.4s;
+}
+
+@keyframes freccetta {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+/*-----RESPOSIVE-----*/
+
+@media (max-width: 42.625em){
+    .arrow span {
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-bottom: 3px solid var(--colore1);
+        border-right: 3px solid var(--colore1);
+    }
+}
+
+/*----- FINE RESPOSIVE-----*/
+
+
+/*------------------FINE SECTION HOME------------------*/
+
+
+
+
+
+
+
+/*------------------SECTION ABOUT------------------*/
+
+#about{
+    background: linear-gradient(-45deg,  #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    color: #fff;
+    height: calc(100% + 350px);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#about .title{
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    max-width: 75%;
+    position: relative;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    top: 80px;
+}
+
+
+
+
+#about .panel{
+    position: relative;
+    top: 15%;
+    left: 5%;
+    opacity: 0.8;
+    width: 90%;
+    padding: 30px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 20px;
+    font-size: 1.4rem;
+}
+
+.paragrafo .parola-chiave{
+    text-decoration: underline #fff;
+    font-weight: 900;
+}
+
+
+/*LAVORARE CON NOI*/
+
+.lavorare-con-noi {
+    position: relative;
+    top:25%;
+    width: 600px;
+    left: 33%;
+    border: 1px solid white;
+    border-radius: 25px;
+    height: 300px;
+}
+
+.lavorare-con-noi h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+
+
+.panel2{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    height: calc(100% - 30px);
+}
+
+.work-with-us{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 10px;
+    gap: 1rem;
+}
+
+
+.work-with-us i{
+    color: #fff;
+}
+
+.work-with-us:hover h3{
+    text-decoration: underline 3px var(--colore1);
+}
+
+.work-with-us:hover i{
+    color: var(--colore1);
+}
+
+@media (max-width: 925px){
+    #about .panel{
+        position: relative;
+        top: 10%;
+    }
+    
+    .paragrafo{
+        font-size:18px;
+    }
+
+    .lavorare-con-noi{
+        position: relative;
+        left: 25px;
+        top: 10%;
+        width: 400px;
+    }
+
+    .lavorare-con-noi h2{
+        font-size: 18px;
+    }
+
+    .work-with-us h3, i{
+        font-size: 14px;
+    }
+
+    .work-with-us{
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .panel2{
+        padding: 0;
+    }
+}
+/*------------------FINE SECTION ABOUT------------------*/
+
+
+
+
+
+/*------------------SECTION COME LAVORIAMO  ------------------*/
+
+#come_lavoriamo {
+    background-color: #000117;
+}
+
+#come_lavoriamo .line {
+    height: 3px;
+    width: 80%;
+    position: relative;
+    top: 45px;
+    left: 10%;
+    background-color: #fff;
+}
+
+#come_lavoriamo .title{
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    max-width: 75%;
+    position: relative; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    top: 80px;
+    color: #fff;
+}
+
+
+.piano-lavorativo{
+    width: 40%;
+    height: 75%;
+    position: relative;
+    left: 30%;
+    top: 15%;
+}
+
+.piano-lavorativo h3, p{
+    color: #fff;
+    padding: 5px;
+}
+
+.piano-lavorativo p{
+    width: 200px;
+}
+
+.piano-lavorativo div{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.piano-lavorativo .consulenza-gratuita{
+    position: absolute;
+    left: 0;
+    top: 10%;
+}
+
+.piano-lavorativo .consulenza-gratuita h3{
+    color: var(--colore4);
+    text-decoration: underline 3px var(--colore4);
+}
+
+.piano-lavorativo .analisi{
+    position: absolute;
+    right: 0;
+    top: 35%;
+}
+
+.piano-lavorativo .analisi h3{
+    color: var(--colore5);
+    text-decoration: underline 3px var(--colore5);
+}
+
+.piano-lavorativo .progettazione{
+    position: absolute;
+    left: 0;
+    top: 55%;
+}
+
+.piano-lavorativo .progettazione h3{
+    color: var(--colore6);
+    text-decoration: underline 3px var(--colore6);
+}
+
+.piano-lavorativo .sviluppo-pubblicazione{
+    position: absolute;
+    right: 0;
+    top: 75%;
+}
+
+.piano-lavorativo .sviluppo-pubblicazione h3{
+    color: var(--colore7);
+    text-decoration: underline 3px var(--colore7);
+}
+
+@media (max-width: 769px)  {
+    .piano-lavorativo{
+        width: 90%;
+        height: 75%;
+        position: relative;
+        left: 5%;
+        top: 15%;
+    }
+}
+
+
+.piano-lavorativo #icona-numerouno {
+    color: var(--colore4);
+    position: absolute;
+    right: 40px;
+    top: 10%;
+}
+
+.piano-lavorativo #icona-numerodue{
+    color: var(--colore5);
+    position: absolute;
+    left: 40px;
+    top: 35%;
+}
+
+.piano-lavorativo #icona-numerotre{
+    color: var(--colore6);
+    position: absolute;
+    right: 40px;
+    top: 55%;
+}
+
+.piano-lavorativo #icona-numeroquattro{
+    color: var(--colore7);
+    position: absolute;
+    left: 40px;
+    top: 75%;
+}
+
+/*------------------FINE SECTION COME LAVORIAMO ------------------*/
+
+
+
+
+
+
+/*------------------SECTION SERVIZI ------------------*/
+
+
+#servizi{
+    background: #000117;
+    color: #fff;
+    height:fit-content;
+}
+
+#servizi .title{
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    max-width: 75%;
+    position: relative; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    top: 80px;
+    color: #fff;
+}
+
+
+#servizi .line {
+    height: 3px;
+    width: 80%;
+    position: relative;
+    top: 45px;
+    left: 10%;
+    background-color: #fff;
+}
+
+#servizi .servizi-uno{
+    position: relative;
+    margin-top: 130px;
+    left: 5%;
+    opacity: 0.8;
+    width: 90%;
+    padding: 30px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 20px;
+    font-size: 1.4rem;
+}
+
+
+#servizi .servizi-due{
+    position: relative;
+    margin-top: 200px;
+    width: 80%;
+    left: 10%;
+    height: fit-content;
+    padding: 30px;
+}
+
+#servizi .servizi-due .titolo3{
+    position: relative;
+    left: 5%;
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    background-size: 400% 400%;
+    background: -webkit-linear-gradient(-45deg,  #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#servizi .servizi-due .keyword{
+    text-decoration: underline #fff;
+    font-weight: 900;
+}
+
+#servizi .servizi-due .piccola-frase{
+    padding: 40px;
+    font-size: 1.4rem;
+}
+
+#servizi .servizi-due .indispensabile{
+    width: 90%;
+    padding: 30px;
+}
+
+#servizi .servizi-due .indispensabile h3{
+    font-size: 18px;
+    background: -webkit-linear-gradient(right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+#servizi .servizi-due .indispensabile p{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#servizi .servizi-due .panel3{
+    padding-top: 20px;
+    border: 2px solid #23d5ab;
+    border-radius: 20px;
+}
+
+
+
+@media (max-width: 925px){
+    #about .panel{
+        position: relative;
+        top: 10%;
+    }
+    
+    .paragrafo-due{
+        font-size:18px;
+    }
+
+    #servizi .servizi-due p{
+        font-size: 18px;
+    }
+    
+    #servizi .servizi-due{
+        width: 100%;
+        left: 0;
+    }
+}
+
+/*------------------FINE SECTION SERVIZI ------------------*/
+
+
+
+
+
+
+/*-------------------SECTION CONTATTACI ------------------*/
+
+#contattaci{
+    width: 100%;
+    height: 100%;
+    background: #000117;
+}
+
+.contatti_2{
+    width: 100%;
+    height: calc(100% - 40px);
+    background: #000117;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.useful-links{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+}
+.useful-links a{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.contatti_2 form{
+    width: 90%;
+    max-width: 500px;
+    padding: 50px 30px 20px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+.fa-paper-plane{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    font-size: 26px;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(-45deg,  #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: abusivisfondo 15s ease infinite;
+    color: #fff;
+}
+
+  
+  @keyframes abusivisfondo {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+.input-group{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+}
+.input-group label{
+    flex-basis: 28%;
+}
+.input-group input, .input-group textarea{
+    flex-basis: 68%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 16px;
+}
+::placeholder{
+    font-size: 14px;
+}
+
+form button{
+    background: #000117;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 10px 40px;
+    outline: 0;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 10px;
+}
+
+.input-group span{
+    position: absolute;
+    bottom: 12px;
+    right: 17px;
+    font-size: 14px;
+    color: red; 
+}
+
+#submit-error{
+    color: red;
+}
+
+.input-group span i{
+    color: #23d5ab;
+    font-size: 16px;
+}
+
+/*------------------FINE SECTION CONTATTACI ------------------*/
